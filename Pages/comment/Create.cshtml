@@ -1,0 +1,44 @@
+@page
+@model BuiXuanToan.Pages_comment.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>comment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="comment.Content" class="control-label"></label>
+                <input asp-for="comment.Content" class="form-control" />
+                <span asp-validation-for="comment.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="comment.Author" class="control-label"></label>
+                <input asp-for="comment.Author" class="form-control" />
+                <span asp-validation-for="comment.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="comment.CreatedAt" class="control-label"></label>
+                <input asp-for="comment.CreatedAt" class="form-control" />
+                <span asp-validation-for="comment.CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
